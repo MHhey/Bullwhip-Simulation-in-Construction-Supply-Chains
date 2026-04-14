@@ -1,7 +1,5 @@
 # Agentic AI Simulation of Bullwhip Effect in Construction Supply Chains
 
-> Heydari, M., Shojaei, A., McCoy, A., & Akanmu, A. — Myers-Lawson School of Construction, Virginia Tech
-
 ## About
 
 This repository contains simulation code for studying how the **bullwhip effect** propagates through construction supply chains under different network topologies and information-sharing regimes. Instead of fixed decision rules, each supply chain agent calls an **LLM (Gemini)** at every time step to generate adaptive behavioral coefficients, enabling emergent behaviors like defensive stockpiling to arise naturally.
