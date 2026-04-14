@@ -1,6 +1,5 @@
 # Agentic AI Simulation of Bullwhip Effect in Construction Supply Chains
 
-> Heydari, M., Shojaei, A., McCoy, A., & Akanmu, A. — Myers-Lawson School of Construction, Virginia Tech
 
 ## About
 
