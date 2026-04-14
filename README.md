@@ -1,27 +1,47 @@
-LLM-Agent Bullwhip Simulation in Construction Supply Chains
+# Agentic AI Simulation of Bullwhip Effect in Construction Supply Chains
 
-This repository contains a multi-agent simulation framework for studying the bullwhip effect in construction supply chains using LLM-driven decision agents.
+> Heydari, M., Shojaei, A., McCoy, A., & Akanmu, A. — Myers-Lawson School of Construction, Virginia Tech
 
-The model represents a five-echelon supply chain network consisting of:
+## About
 
-Subcontractor
+This repository contains simulation code for studying how the **bullwhip effect** propagates through construction supply chains under different network topologies and information-sharing regimes. Instead of fixed decision rules, each supply chain agent calls an **LLM (Gemini)** at every time step to generate adaptive behavioral coefficients, enabling emergent behaviors like defensive stockpiling to arise naturally.
 
-General Contractor
+## Scenarios
 
-Procurement Office
+12 self-contained Jupyter notebooks covering a full factorial design:
 
-Distributor
+| Dimension | Levels |
+|---|---|
+| Network topology | Linear · Circular (closed-loop with material recovery) |
+| Project scope | Single-project · Multi-project |
+| Information regime | Local · Global · Efficient |
 
-Supplier
+## Repository Structure
 
-Agents make procurement and ordering decisions based on local information, demand signals, and supply chain conditions, allowing the simulation to examine how information visibility, network topology, and disruptions influence demand amplification across the chain.
+```
+├── 1_Linear_Single_Local_5ech.ipynb      # Scenario 1  — Linear, Single, Local
+├── 2_Linear_Single_Global_5ech.ipynb     # Scenario 2  — Linear, Single, Global
+├── 3_Linear_Multi_Local_5ech.ipynb       # Scenario 4  — Linear, Multi,  Local
+├── 4_Linear_Multi_Global_5ech.ipynb      # Scenario 5  — Linear, Multi,  Global
+├── 5_Circular_Single_Local_5ech.ipynb    # Scenario 7  — Circular, Single, Local
+├── 6_Circular_Single_Global_5ech.ipynb   # Scenario 8  — Circular, Single, Global
+├── 7_Circular_Multi_Local_5ech.ipynb     # Scenario 10 — Circular, Multi,  Local
+├── 8_Circular_Multi_Global_5ech.ipynb    # Scenario 11 — Circular, Multi,  Global
+├── 9_Linear_Single_Eff_5ech.ipynb        # Scenario 3  — Linear, Single, Efficient
+├── 10_Linear_Multi_Eff_5ech.ipynb        # Scenario 6  — Linear, Multi,  Efficient
+├── 11_Circular_Single_Eff_5ech.ipynb     # Scenario 9  — Circular, Single, Efficient
+└── 12_Circular_Multi_Eff_5ech.ipynb      # Scenario 12 — Circular, Multi,  Efficient
+```
 
-The framework enables experiments comparing:
+## Requirements
 
-Linear vs. closed-loop supply chain structures
+```bash
+pip install google-generativeai jsonschema numpy pandas scipy matplotlib seaborn
+```
 
-Symmetric vs. asymmetric information regimes
+Set your Gemini API key before running:
+```bash
+export GEMINI_API_KEY="your_key_here"
+```
 
-Stable vs. disrupted supply conditions
-
-The simulation is implemented in Python and designed for experimentation with LLM-based agent reasoning and supply chain dynamics.
+Each notebook is self-contained — run cells sequentially from top to bottom.
